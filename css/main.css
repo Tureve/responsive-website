@@ -100,7 +100,7 @@
 
   }
 
-  .navbar_logo {
+  .navbar__logo {
       font-size: var(--font-medium);
       font-weight: var(--weight-semi-bold);
       color: var(--color-white);
@@ -142,14 +142,14 @@
       text-align: center;
   }
 
-  .home_avatar {
+  .home__avatar {
       width: 250px;
       height: 250px;
       border-radius: 50%;
       border: 2px solid var(--color-blue);
   }
 
-  .home__title, .home_description {
+  .home__title, .home__description {
       color: var(--color-black)
   }
 
