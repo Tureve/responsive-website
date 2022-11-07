@@ -1,6 +1,6 @@
-/* Global */
-:root {
-  /* Color */
+
+:root { /* 가상클래스 */
+  
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
@@ -20,17 +20,17 @@
   --font-regular: 18px;
   --font-small: 16px;
   --font-micro: 14px;
-  /* Font weight */
+  /* Font weight(폰트의 가중치나 굵기를 명시한다) */
   --weight-bold: 700;
   --weight-semi-bold: 600;
   --weight-regular: 400;
   /* Size */
   --size-border-radius: 4px;
-  /* Annimation */
+  /* Annimation(애니메이션 지속 시간) */
   --animation-duration: 300ms;
 }
 /* Universal tags */
-* {
+ * {
   box-sizing: border-box;
 }
 body {
@@ -39,7 +39,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: var(--color-blue);
+  color: var(--color-white);
 }
 ul {
   padding-left: 0;
@@ -54,58 +54,56 @@ button {
   outline: none;
   padding: 0;
 }
-
 /* Typography */
-  h1 {
+h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
   color: var(--color-black);
   margin: 16px 0px;
 }
-​
-  h2 {
+h2 {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
   color: var(--color-black);
   margin: 8px 0;
 }
-​
-  h3 {
+h3 {
   font-size: var(--font-regular);
   font-weight: var(--font-regular);
   color: var(--color-black);
   margin: 8px 0;
 }
-​
-  p {
+p {
   font-size: var(--font-regular);
   font-weight: var(--font-regular);
   color: var(--color-black);
   margin: 4px 0;
 }
 
-/* Naver */
+/* Navbar */
 #navbar {
   position: fixed;
   width: 100%;
   background-color: transparent;
+  /* background-color:  var(--color-pink); */
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: center; /* 플렉스 요소는 플렉스 컨테이너의 가운데에 배치 */
+  justify-content: space-between; /* 저스트파이-컨텐트 : 요소들 사이에 동일한 간격을 준다.*/
   padding: 16px;
-  transition: all var(--animation-duration) ease-in-out;
+  transition: all var(--animation-duration) ease-in-out; /* Transition(트랜지션): 애니메이션 속도를 조절하는 방법을 제공 */
   z-index: 1;
 }
 
 #navbar.navbar--dark {
-  background-color: var(--color-pink);
-  padding: 8px; 
+  background-color: var(--color-blue);
 }
 
 .navbar__logo {
-  font-size: var(--font-medium);
-  color: var(--color-white);
-  font-weight: var(--weight-bold);
+  font-size: var(--font-medium); /* 폰트 사이즈 : 중간 */
+  /* color: var(--color-white);
+  font-weight: var(--weight-bold); */
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-light-grey)
 }
 
 .navbar__menu {
@@ -115,203 +113,174 @@ button {
 .navbar__menu__item {
   padding: 8px 12px;
   margin: 0 4px;
-  color: var(--color-dark-grey);
+  color: #10405f;
   cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: var(--size-border-radius);
-  border: solid transparent;
+  border: 1px solid transparent; /* 테두리 */
 }
-
-
 .navbar__menu__item:hover {
-  background-color: var(--color-dark-pink);
-  border-radius: var(--size-border-radius);
-  border: 1px solid var(--color-white);
-  border-radius: var(--size-border-radius);
+  background-color: var(--color-blue);
+  border-radius: var(--size-border-radius); /* 테두리 둥글게 만드는 속성 */
+  border: 1px solid white;
+}
+.navbar__toggle-btn {
+  position: absolute;
+  top: 24px; /* 어디에 적용되는지 모르겠음 */
+  right: 32px;
+  font-size: 24px;
+  color: var(--color-white);
+  display: none;
 }
 
 /* Home */
 #home {
-  background: url("/imgs/bga2.png") center/cover no-repeat;
+  background: url(/imgs/bga2.png) center/cover no-repeat; /* 캔바에서 이미지 따오기 */
   padding: 40px;
   padding-top: 120px;
   text-align: center;
 }
-
 .home__avatar {
   width: 250px;
   height: 250px;
-  border-radius: 50%;
-  border: 2px solid var(--color-white);
+  border-radius: 50%; /* 테두리 둥글게 만드는 속성 */
+  border: 2px solid var(--color-blue); /* 테두리 실선, 2px, 색상 */
 }
-
 .home__title,
-.home__description {
+.home__description /*디스크랩션 */ {
   color: var(--color-black);
 }
-
 .home__contact {
-  color: var(--color-white);
+  color: var(--color-dark-white);
   font-size: var(--font-regular);
-  font-weight: var(--weight-bold);
-  margin: 24px;
-  border: 2px solid var(--color-white);
-  border-radius: var(--size-border-radius);
-  padding: 8px 12px;
+  font-weight: var(--weight-bold); /* 글자 굵기 정하는 속성 */
+  margin: 24px; /* 바깥쪽 여백 */
+  border: 2px solid var(--color-blue);
+  border-radius: var(--size-border-radius); /* 테두리 둥글게 만드는 속성 */
+  padding: 8px 12px; /* 안쪽 여백(위아래: 8px, 왼쪽오른쪽: 12px) */
 }
-
 .home__contact:hover {
-  background-color: var(--color-orange);
+  background-color: var(--color-blue);
 }
-
 /* Section common */
 .section {
   padding: 50px;
-  text-align: center;
+  text-align: center; /*텍스트의 정렬 방향 */
+  margin: auto; /* 알아서 적당히 조절 */
+}
+.section__container {
+  max-width: 1200px; /* 최대 너비(1200px을 넘어갈수없음) */
   margin: auto;
 }
-
-.section__container {
-  max-width: 1200px;
-  margin: 0 auto;
-  
-  
-}
-
 /* About */
 .about__majors {
   display: flex;
-  justify-content: space-between;
-  margin: 80px 0;
+  justify-content: space-between; /* 요소들 사이에 동일한 간격을 준다 */
+  margin: 80px 0; /* 위아래 80px, 왼쪽오른쪽 0 */
 }
-
-
 .major__icon {
   width: 170px;
   height: 170px;
   font-size: 70px;
-  line-height: 170px;
+  line-height: 170px; /* 줄 높이를 정하는 속성 */
   margin: auto;
   color: var(--color-blue);
   border: 1px solid var(--color-blue);
-  border-radius: 50%;
-  margin-bottom: 16px;
+  border-radius: 50%; /* 테두리 둥글게 하는 속성(보더 레이디어스) */
+  margin-bottom: 16px; /* 아래쪽 바깥 여백 */
 }
-
 .major__icon:hover i {
-  color: var(--color-pink);
-  transform: rotate(-30deg) scale(1.1); 
+  color: var(--color-blue);
+  transform: rotate(-30deg) scale(1.1);
 }
-
 .major__icon i {
   transition: all var(--animation-duration) ease;
+  /* html 요소의 모양, 크기, 위치 등을 자유롭게 바꿀 수 있음 */
 }
-
 .major__title,
 .major__description {
   color: var(--color-dark-grey);
 }
-
-.major__description {
+.major__description/*디스크랩션 */ {
   font-size: var(--font-small);
 }
-
 .job {
   display: flex;
   align-items: center;
 }
-
-.job__description {
+.job__description /*디스크랩션 */ {
   margin: 0 16px;
-  text-align: left;
+  text-align: left; /* 텍스트 정렬 방향 */
 }
-
 .job__name {
   font-size: var(--font-small);
 }
-
-.job__period {
-  font-size: var(--font-micro);
+.job__period /*잡 피어리어드*/ {
+  font-size: var(--font-micro); /* 폰트 마익로우 */
 }
-
-.job__name,
-.job__period {
-  color: var(--color-light-grey);
-}
-
-
-/* skills */
+/* Skills */
 #skills {
-  background-color: var(--color-yellow);
+  background-color: #bcdfff;
 }
-
 .skillset {
   display: flex;
   background-color: var(--color-light-grey);
-  color: var(--color-white);
+  color: var(--color-light-white);
   margin: 20px 0;
 }
-
+.skillset__title {
+  color: var(--color-white);
+}
 .skillset__left {
-  background-color: var(--color-dark-grey);
   flex-basis: 60%;
+  background-color: var(--color-dark-grey);
   padding: 20px 40px;
 }
-
-skillset__right {
-  flex-basis: 40%;
+.skill {
+  margin-bottom: 32px;
 }
-
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+}
+.skill__bar {
+  height: 3px;
+  background-color: var(--color-grey);
+}
+.skill__value {
+  width: 100%;
+  height: 3px;
+  background-color: #5c9fcc;
+}
+.skillset__right {
+  flex-basis: 40%; /* 기본 크기 설정 */
+}
 .tools {
   background-color: var(--color-grey);
 }
-
 .tools,
 .etc {
   padding: 20px;
 }
 
-.skill__description {
-  display: flex;
-  justify-content: space-between;
+/* Work */
+.work__categories {
+  margin: 40px;
 }
-
-
-.skill__bar {
-  width: 100%;
-  height: 3px;
-  background-color: var(--color-grey);
-}
-
-.skill__value {
-  height: 3px;
-  background-color: var(--color-orange);
-}
-
-.skill {
-  margin-bottom: 32px;
-}
-
-
-/* work */
 .category__btn {
   border: 1px solid var(--color-dark-white);
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
   position: relative;
-  width: 100%;
-  margin: 4px 0;
 }
 
 .category__btn.selected,
 .category__btn:hover {
-  background-color: var(--color-pink);
+  background-color: #bcdfff;
   color: var(--color-white);
 }
 
 .category__count {
-  background-color: var(--color-orange);
+  background-color: #5c9fcc;
   border-radius: 50%;
   color: var(--color-white);
   width: 24px;
@@ -324,35 +293,34 @@ skillset__right {
   transition: all var(--animation-duration) ease-in;
   opacity: 0;
 }
-
-.category__count.selected .category__count,
+.category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
   top: 0;
 }
-
-
 .work__projects {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   opacity: 1;
-  transition: all var(--animation-duration) ease-out;
+  transition: all var(--animation-duration) ease-in;
 }
 
+.work__projects.anim-out{
+  opacity: 0;
+  transform: scale(0.96) translateY(40px);
+}
 
 .project {
   position: relative;
-  background-color: var(--color-light-white);
-  width: 280px;
-  height: 250px;
-  margin: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 280px;
+  height: 250px;
+  margin: 2px;
+  background-color: var(--color-light-white);
 }
-
-
 
 .project.invisible {
   display: none;
@@ -367,7 +335,7 @@ skillset__right {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: black;
+  background-color: var(--color-black);
   width: 100%;
   height: 100%;
   display: flex;
@@ -377,21 +345,199 @@ skillset__right {
   opacity: 0;
   transform: translateY(10px);
 }
-
-
 .project:hover .project__description {
-  opacity: 0.8;;
+  opacity: 0.8;
   transform: translateY(0);
 }
-
-
+.project__description h3 {
+  color: var(--color-white);
+}
 .project__description h3:after {
   content: "";
   display: block;
   position: relative;
   width: 25px;
   height: 2px;
-  background-color: var(--color-white);
+  background-color: var(--color-dark-white);
   left: 50%;
   margin-left: -12px;
+  margin-top: 8px;
+}
+
+#testimonials {
+  background-color: var(--color-light-white);
+}
+
+.testimonials {
+  margin: 40px;
+}
+
+.testimonial {
+  display: flex;
+  margin: 32px 0;
+}
+
+.testimonial__avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.testimonial__avatar:nth-child(odd) {
+  margin-right: 40px;
+}
+
+.testimonial__avatar:nth-child(even) {
+  margin-left: 40px;
+}
+
+.testimonial__speech-bubble {
+  padding: 18px;
+  background-color: var(--color-white);
+  border-radius: var(--size-border-radius);
+}
+
+.testimonial__speech-bubble a {
+  color: var(--color-dark-pink);
+}
+
+.testimonial__speech-bubble p {
+  color: var(--color-black);
+}
+
+/* contact */ 
+#contact {
+  background-color: var(--color-blue);
+}
+
+.contact__title, 
+.contact__email,
+.contact__rights {
+  color: var(--color-white);
+}
+
+.contact__title {
+  margin: 32px 0;
+}
+
+.contact__links {
+  font-size: var(--font-large);
+  margin: 24px 0;
+}
+
+.contact__links i:hover {
+transform: scale(1.1);
+color: #fe918d;
+transition:all var(--animation-duration) ease-in; 
+}
+
+.arrow-up {
+position: fixed;
+bottom: 50px;
+right: 50px;
+width: 70px;
+height: 70px;
+font-size: 50px;
+color: var(--color-white);
+background-color: var(--color-blue);
+border-radius: 50%;
+opacity: 0; /* 요소의 투명도 */
+transition: opacity 300ms ease-in; /* 애니메이션 속도를 조절하는 방법 */
+}
+
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.navbar__toggle-btn {
+color: var(--color-white);
+font-size: var(--font-medium);
+right: 25px;
+display: none; 
+}
+
+@media screen and (max-width: 800px) {
+.navbar__toggle-btn {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+#navbar {
+  flex-direction: column; 
+  align-items: flex-start;
+  background-color: var(--color-blue);
+}
+
+.navbar__menu {
+  flex-direction: column; 
+  text-align: center;
+  width: 100%;
+  display: none;
+}
+
+.navbar__menu.open {
+  display: block;
+}
+
+.about__majors {
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+
+.major {
+  margin-bottom: 30px;
+}
+
+.testimonial__avatar {
+  width: 120px;
+  height: 120px;
+}
+
+.testimonial {
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial__avatar:nth-child(even),
+  .testimonial__avatar:nth-child(odd) {
+      margin: 0;
+      margin-bottom: 8px;
+  }
+
+  .testimonial__speech-bubble {
+      order: 1;
+  }
+
+  .skill {
+      flex-direction: column;
+  }
+
+  .category__btn {
+      margin: 4px 0;
+      width: 100%;
+  }
+
+  .project {
+      flex-grow: 1;
+  }
+
+  .arrow-up {
+      width: 50px;
+      height: 50px;
+      font-size: 30px;
+      line-height: 50px;
+      right: 16px;
+      bottom: 16px;
+      transform: perspective();
+  }
+
+.category__btn {
+  width: 100%;
+  margin: 4px 0;
+}
 }
